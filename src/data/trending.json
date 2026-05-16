@@ -1,0 +1,30 @@
+{
+  "Chennai": [
+    { "label": "1 BHK in Velachery", "query": "1 BHK in Velachery", "slug": "1-bhk-flats-in-velachery" },
+    { "label": "Flats near OMR", "query": "Flats in OMR", "slug": "flats-for-rent-in-omr" },
+    { "label": "PG in Guindy", "query": "PG in Guindy", "slug": "pg-in-guindy" },
+    { "label": "2 BHK Anna Nagar", "query": "2 BHK in Anna Nagar", "slug": "2-bhk-flats-in-anna-nagar" }
+  ],
+  "Pune": [
+    { "label": "1 BHK Hinjewadi", "query": "1 BHK in Hinjewadi", "slug": "1-bhk-flats-in-hinjewadi" },
+    { "label": "Flats in Wakad", "query": "Flats in Wakad", "slug": "flats-for-rent-in-wakad" },
+    { "label": "PG Kharadi", "query": "PG in Kharadi", "slug": "pg-in-kharadi" },
+    { "label": "2 BHK Baner", "query": "2 BHK in Baner", "slug": "2-bhk-flats-in-baner" }
+  ],
+  "Bangalore": [
+    { "label": "1 BHK Koramangala", "query": "1 BHK in Koramangala", "slug": "1-bhk-flats-in-koramangala" },
+    { "label": "Flats Whitefield", "query": "Flats in Whitefield", "slug": "flats-for-rent-in-whitefield" },
+    { "label": "PG Electronic City", "query": "PG in Electronic City", "slug": "pg-in-electronic-city" },
+    { "label": "2 BHK Indiranagar", "query": "2 BHK in Indiranagar", "slug": "2-bhk-flats-in-indiranagar" }
+  ],
+  "Mumbai": [
+    { "label": "1 BHK Andheri", "query": "1 BHK in Andheri West", "slug": "1-bhk-flats-in-andheri-west" },
+    { "label": "Flats Powai", "query": "Flats in Powai", "slug": "flats-for-rent-in-powai" },
+    { "label": "2 BHK Bandra", "query": "2 BHK in Bandra", "slug": "2-bhk-flats-in-bandra" }
+  ],
+  "Hyderabad": [
+    { "label": "1 BHK Gachibowli", "query": "1 BHK in Gachibowli", "slug": "1-bhk-flats-in-gachibowli" },
+    { "label": "Flats Madhapur", "query": "Flats in Madhapur", "slug": "flats-for-rent-in-madhapur" },
+    { "label": "PG Hitech City", "query": "PG in Hitech City", "slug": "pg-in-hitech-city" }
+  ]
+}

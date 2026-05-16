@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Chennai",
+    "slug": "chennai",
+    "heroTitle": "Find Rental Homes in Chennai",
+    "priceMultiplier": 1,
+    "baseRent": { "min": 12000, "max": 45000 }
+  },
+  {
+    "name": "Pune",
+    "slug": "pune",
+    "heroTitle": "Explore Apartments in Pune",
+    "priceMultiplier": 1.05,
+    "baseRent": { "min": 14000, "max": 50000 }
+  },
+  {
+    "name": "Bangalore",
+    "slug": "bangalore",
+    "heroTitle": "Discover Rentals in Bangalore",
+    "priceMultiplier": 1.2,
+    "baseRent": { "min": 15000, "max": 60000 }
+  },
+  {
+    "name": "Mumbai",
+    "slug": "mumbai",
+    "heroTitle": "Find Homes in Mumbai",
+    "priceMultiplier": 1.5,
+    "baseRent": { "min": 20000, "max": 80000 }
+  },
+  {
+    "name": "Hyderabad",
+    "slug": "hyderabad",
+    "heroTitle": "Rent in Hyderabad",
+    "priceMultiplier": 1.1,
+    "baseRent": { "min": 13000, "max": 55000 }
+  }
+]

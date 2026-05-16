@@ -1,0 +1,44 @@
+{
+  "Chennai": [
+    { "name": "Guindy", "tier": 2, "nearby": ["Phoenix Mall", "IIT Madras", "Ekkatuthangal Metro"] },
+    { "name": "Velachery", "tier": 2, "nearby": ["Velachery Metro", "Phoenix Marketcity", "Taramani"] },
+    { "name": "OMR", "tier": 2, "nearby": ["Tidel Park", "Sholinganallur", "Siruseri IT Park"] },
+    { "name": "Anna Nagar", "tier": 1, "nearby": ["Anna Nagar Tower", "VR Mall", "Koyambedu Metro"] },
+    { "name": "Adyar", "tier": 1, "nearby": ["Adyar Eco Park", "Besant Nagar Beach", "Thiruvanmiyur"] },
+    { "name": "T Nagar", "tier": 1, "nearby": ["Panagal Park", "Nungambakkam", "T Nagar Metro"] },
+    { "name": "Porur", "tier": 3, "nearby": ["DLF Cybercity", "Porur Lake", "Madhavaram"] },
+    { "name": "Tambaram", "tier": 3, "nearby": ["Tambaram Railway", "Chromepet", "Perungalathur"] }
+  ],
+  "Pune": [
+    { "name": "Hinjewadi", "tier": 2, "nearby": ["Rajiv Gandhi Infotech Park", "Wakad Bridge", "Xion Mall"] },
+    { "name": "Wakad", "tier": 2, "nearby": ["D-Mart Wakad", "Hinjewadi Phase 1", "Balewadi"] },
+    { "name": "Kharadi", "tier": 2, "nearby": ["World Trade Center", "EON IT Park", "Viman Nagar"] },
+    { "name": "Baner", "tier": 1, "nearby": ["Baner Road", "Aundh", "Pashan"] },
+    { "name": "Kothrud", "tier": 1, "nearby": ["Paud Road", "MIT College", "Karve Nagar"] },
+    { "name": "Hadapsar", "tier": 3, "nearby": ["Magarpatta City", "Amanora Mall", "Pune Station"] }
+  ],
+  "Bangalore": [
+    { "name": "Koramangala", "tier": 1, "nearby": ["Forum Mall", "Sony World Signal", "HSR Layout"] },
+    { "name": "Whitefield", "tier": 2, "nearby": ["ITPL", "Phoenix Marketcity", "Hope Farm"] },
+    { "name": "Indiranagar", "tier": 1, "nearby": ["100 Feet Road", "CMH Road", "Metro Station"] },
+    { "name": "Electronic City", "tier": 2, "nearby": ["Infosys Campus", "Wipro Gate", "Bommasandra"] },
+    { "name": "Marathahalli", "tier": 2, "nearby": ["Outer Ring Road", "Bellandur", "Kundalahalli"] },
+    { "name": "BTM Layout", "tier": 3, "nearby": ["Udupi Garden", "Jayanagar", "Silk Board"] }
+  ],
+  "Mumbai": [
+    { "name": "Andheri West", "tier": 1, "nearby": ["Lokhandwala", "Versova Metro", "Infinity Mall"] },
+    { "name": "Powai", "tier": 1, "nearby": ["Hiranandani Gardens", "IIT Bombay", "Galleria Mall"] },
+    { "name": "Bandra", "tier": 1, "nearby": ["Linking Road", "Bandra Station", "Carter Road"] },
+    { "name": "Goregaon", "tier": 2, "nearby": ["Oberoi Mall", "Film City", "Malad"] },
+    { "name": "Thane", "tier": 2, "nearby": ["Viviana Mall", "Ghodbunder Road", "Kasarvadavali"] },
+    { "name": "Navi Mumbai", "tier": 3, "nearby": ["Vashi", "Seawoods", "Palm Beach Road"] }
+  ],
+  "Hyderabad": [
+    { "name": "Gachibowli", "tier": 1, "nearby": ["DLF Cyber City", "ISB", "Wipro Circle"] },
+    { "name": "Madhapur", "tier": 1, "nearby": ["Hitech City", "Inorbit Mall", "Durgam Cheruvu"] },
+    { "name": "Kondapur", "tier": 2, "nearby": ["Botanical Garden", "IKEA", "Gachibowli"] },
+    { "name": "Banjara Hills", "tier": 1, "nearby": ["Road No 12", "GVK One Mall", "Jubilee Hills"] },
+    { "name": "Kukatpally", "tier": 3, "nearby": ["KPHB Metro", "Forum Sujana Mall", "Miyapur"] },
+    { "name": "Hitech City", "tier": 1, "nearby": ["Raheja Mindspace", "Cyber Towers", "Raidurg Metro"] }
+  ]
+}

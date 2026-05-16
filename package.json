@@ -6,12 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "discover:listings": "node scripts/discover-all-cities.mjs",
+    "scrape:images": "node scripts/scrape-sulekha-images.mjs",
+    "scrape:browser": "node scripts/scrape-sulekha-browser.mjs",
+    "scrape:all": "node scripts/discover-all-cities.mjs && node scripts/scrape-sulekha-browser.mjs",
+    "build:manifest": "node scripts/build-manifest-from-disk.mjs"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.16.0",
     "next": "16.2.6",
+    "nuqs": "^2.8.9",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "playwright": "^1.60.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
