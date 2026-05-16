@@ -175,7 +175,27 @@ export function generateListing(
   const nearbyPlaces = locEntry.nearby ?? pickN(rng, ["Metro Station", "Mall", "IT Park", "Hospital"], 3);
 
   const ownerName = pick(rng, OWNER_NAMES);
-  const description = `Spacious ${bedrooms || "studio"} ${propertyType} for rent in ${locality}, ${city}. This ${furnishing} home offers ${sqft} sq.ft of living space with modern amenities. Located close to ${nearbyPlaces.slice(0, 2).join(" and ")}, ideal for professionals and families. Available for immediate occupancy subject to agreement.`;
+  const amenityHighlight = amenities.slice(0, 4).join(", ");
+  const commuteNote = filterFlags.metroNearby
+    ? "Metro connectivity nearby makes daily commuting easier."
+    : `Well connected to ${nearbyPlaces[0] ?? "local hubs"} and neighbourhood markets.`;
+  const tenantNote = filterFlags.bachelorAllowed
+    ? "Suitable for working professionals and bachelors."
+    : filterFlags.familyPreferred
+      ? "Preferred for families seeking a quiet residential setup."
+      : "Open to families and working professionals.";
+  const parkingNote = filterFlags.parking ? "Dedicated parking available." : "";
+  const description = [
+    `This ${furnishing} ${bedrooms || "studio"} ${propertyType} for rent in ${locality}, ${city} offers ${sqft} sq.ft of living space at ₹${roundedPrice.toLocaleString("en-IN")}/month.`,
+    `Highlights include ${amenityHighlight || "essential conveniences"} with ${commuteNote}`,
+    tenantNote,
+    parkingNote,
+    filterFlags.immediateMoveIn
+      ? "Available for immediate move-in subject to agreement and standard security deposit."
+      : "Move-in date flexible; schedule a visit to confirm availability.",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return {
     id: listingId,

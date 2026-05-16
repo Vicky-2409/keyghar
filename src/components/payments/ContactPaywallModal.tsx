@@ -102,7 +102,11 @@ export function ContactPaywallModal({
 
         <p className="text-center text-[10px] leading-relaxed text-[#999]">
           Secure payment via Razorpay. No account required. Access is stored on this browser for 30 days.
-          Cancel anytime via your bank or Razorpay dashboard.
+          Cancel anytime via your bank or Razorpay dashboard. This site may also show Google ads; see our{" "}
+          <a href="/privacy" className="underline hover:text-[#666]">
+            Privacy Policy
+          </a>
+          .
         </p>
       </div>
     </Modal>

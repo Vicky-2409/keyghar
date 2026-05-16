@@ -15,6 +15,12 @@ export const BRAND_STATS = {
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://keyghar.online";
 
+export const SUPPORT_EMAIL =
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@keyghar.online";
+
+export const OPERATOR_NAME = "Vignesh";
+export const BUSINESS_LOCATION = "India";
+
 export const DEFAULT_CITY = "Chennai";
 
 export const CITIES = [

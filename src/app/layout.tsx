@@ -7,7 +7,9 @@ import { ContactAccessProvider } from "@/providers/ContactAccessProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
-import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/constants";
+import { BRAND_NAME, BRAND_TAGLINE, SITE_URL } from "@/lib/constants";
+import { CookieConsent } from "@/components/layout/CookieConsent";
+import { AdSenseScript } from "@/components/ads/AdSenseScript";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -15,12 +17,18 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   title: {
     default: `${BRAND_NAME} — Rental Homes`,
     template: `%s | ${BRAND_NAME}`,
   },
   description: BRAND_TAGLINE,
+  metadataBase: new URL(SITE_URL),
+  ...(googleVerification
+    ? { verification: { google: googleVerification } }
+    : {}),
 };
 
 export default function RootLayout({
@@ -38,6 +46,8 @@ export default function RootLayout({
               <main className="flex-1">{children}</main>
               <Footer />
               <MobileBottomNav />
+              <CookieConsent />
+              <AdSenseScript />
             </ContactAccessProvider>
           </NuqsProvider>
         </ThemeProvider>

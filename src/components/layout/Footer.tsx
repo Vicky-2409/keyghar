@@ -63,14 +63,20 @@ export function Footer() {
             © {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
           </p>
           <div className="flex gap-4 text-xs text-white/50">
-            <Link href="/search" className="hover:text-white">
+            <Link href="/privacy" className="hover:text-white">
               Privacy
             </Link>
-            <Link href="/search" className="hover:text-white">
+            <Link href="/terms" className="hover:text-white">
               Terms
             </Link>
-            <Link href="/search" className="hover:text-white">
-              Contact us
+            <Link href="/about" className="hover:text-white">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-white">
+              Contact
+            </Link>
+            <Link href="/blog" className="hover:text-white">
+              Guides
             </Link>
           </div>
         </div>

@@ -12,6 +12,7 @@ import { RelatedProperties } from "./RelatedProperties";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
 import { useContactAccessContext } from "@/providers/ContactAccessProvider";
+import { AdUnit } from "@/components/ads/AdUnit";
 
 const TABS = ["Photos", "Overview", "Amenities", "Locality", "Owner"] as const;
 type Tab = (typeof TABS)[number];
@@ -206,7 +207,9 @@ export function PropertyDetailClient({ property }: { property: Property }) {
           </div>
         </div>
 
-        <div className="mt-10 rounded border border-[#e0e0e0] bg-white p-4">
+        <AdUnit slot="property-mid" format="horizontal" className="mt-6 rounded border border-[#e0e0e0] bg-white p-4" />
+
+        <div className="mt-6 rounded border border-[#e0e0e0] bg-white p-4">
           <RelatedProperties
             city={property.city}
             locality={property.locality}

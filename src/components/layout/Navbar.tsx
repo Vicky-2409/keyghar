@@ -72,6 +72,18 @@ export function Navbar() {
           >
             Shortlist
           </Link>
+          <Link
+            href="/blog"
+            className="rounded-md px-4 py-2 text-sm font-semibold text-[#444] transition-colors hover:bg-[#f4f6f8] hover:text-primary"
+          >
+            Guides
+          </Link>
+          <Link
+            href="/about"
+            className="rounded-md px-4 py-2 text-sm font-semibold text-[#444] transition-colors hover:bg-[#f4f6f8] hover:text-primary"
+          >
+            About
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
