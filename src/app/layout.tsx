@@ -8,7 +8,8 @@ import { ContactAccessProvider } from "@/providers/ContactAccessProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
-import { BRAND_NAME, BRAND_TAGLINE, SITE_URL } from "@/lib/constants";
+import { BRAND_NAME, BRAND_TAGLINE, SITE_URL, SUPPORT_EMAIL } from "@/lib/constants";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { CookieConsent } from "@/components/layout/CookieConsent";
 import { AdSenseScript } from "@/components/ads/AdSenseScript";
 
@@ -36,6 +37,27 @@ export const metadata: Metadata = {
     : {}),
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: BRAND_NAME,
+  url: SITE_URL,
+  email: SUPPORT_EMAIL,
+  description: BRAND_TAGLINE,
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: BRAND_NAME,
+  url: SITE_URL,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/search?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,6 +66,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={jakarta.variable}>
       <body className="min-h-screen flex flex-col font-sans antialiased pb-16 md:pb-0">
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
         {adsenseClient && (
           <Script
             id="adsense-init"

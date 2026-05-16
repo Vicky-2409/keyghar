@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, getBlogPost } from "@/data/blogPosts";
+import { ALL_BLOG_POSTS, getBlogPost } from "@/lib/blogPostsAll";
 import { AdUnit } from "@/components/ads/AdUnit";
-import { BRAND_NAME } from "@/lib/constants";
+import { RelatedLinks } from "@/components/seo/RelatedLinks";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { BRAND_NAME, SITE_URL } from "@/lib/constants";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return BLOG_POSTS.map((p) => ({ slug: p.slug }));
+  return ALL_BLOG_POSTS.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -18,6 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `${SITE_URL}/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `${SITE_URL}/blog/${slug}`,
+      type: "article",
+    },
   };
 }
 
@@ -28,8 +37,29 @@ export default async function BlogPostPage({ params }: Props) {
 
   const paragraphs = post.content.trim().split(/\n\n+/);
 
+  const defaultLinks = [
+    {
+      href: `/search?city=${encodeURIComponent(post.city ?? "Chennai")}`,
+      label: `Search rentals${post.city ? ` in ${post.city}` : ""}`,
+    },
+    { href: "/blog", label: "All rental guides" },
+  ];
+
+  const relatedLinks = post.relatedLinks?.length ? post.relatedLinks : defaultLinks;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    author: { "@type": "Organization", name: BRAND_NAME },
+    publisher: { "@type": "Organization", name: BRAND_NAME, url: SITE_URL },
+  };
+
   return (
     <div className="bg-[#f4f6f8] min-h-screen">
+      <JsonLd data={articleJsonLd} />
       <div className="border-b border-[#dde3eb] bg-white">
         <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
           <nav className="text-xs text-[#888]">
@@ -64,13 +94,9 @@ export default async function BlogPostPage({ params }: Props) {
               <p key={i}>{para.trim()}</p>
             ))}
           </div>
+          <RelatedLinks links={relatedLinks} />
           <AdUnit slot="blog-bottom" format="rectangle" className="mt-8" />
         </div>
-        <p className="mt-8 text-center">
-          <Link href="/search" className="font-semibold text-primary hover:underline">
-            Browse rental listings →
-          </Link>
-        </p>
       </article>
     </div>
   );

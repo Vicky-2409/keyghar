@@ -42,7 +42,19 @@ export function PropertyDetailClient({ property }: { property: Property }) {
             {property.city}
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-[#333]">{property.locality}</span>
+          <Link
+            href={`/search?city=${encodeURIComponent(property.city)}&q=${encodeURIComponent(property.locality)}`}
+            className="hover:text-primary"
+          >
+            {property.locality}
+          </Link>
+          <span className="mx-2 text-[#ccc]">·</span>
+          <Link
+            href={`/flats-for-rent-in-${property.locality.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+            className="text-primary hover:underline"
+          >
+            More in {property.locality}
+          </Link>
         </div>
       </div>
 

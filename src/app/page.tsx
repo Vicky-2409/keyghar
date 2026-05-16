@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
 import { HomePageClient } from "@/components/home/HomePageClient";
 import { generateListings } from "@/lib/generateListing";
-import { DEFAULT_CITY } from "@/lib/constants";
+import { BRAND_NAME, BRAND_TAGLINE, DEFAULT_CITY, SITE_URL } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: `${BRAND_NAME} — Flats, Houses & PG for Rent in India`,
+  description: BRAND_TAGLINE,
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: `${BRAND_NAME} — Rental Homes`,
+    description: BRAND_TAGLINE,
+    url: SITE_URL,
+    siteName: BRAND_NAME,
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   const featured = generateListings({

@@ -1,3 +1,5 @@
+export type BlogPostLink = { href: string; label: string };
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,6 +7,8 @@ export type BlogPost = {
   publishedAt: string;
   readMinutes: number;
   city?: string;
+  locality?: string;
+  relatedLinks?: BlogPostLink[];
   content: string;
 };
 
@@ -98,7 +102,3 @@ Measure usable space, not just carpet area on paper. Check train or metro walk t
 Negotiate rent and deposit when the flat has been listed for several weeks. Use KeyGhar to compare similar 1 and 2 BHK listings in your target suburb, then contact owners directly when you subscribe to the contact pass.`,
   },
 ];
-
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((p) => p.slug === slug);
-}

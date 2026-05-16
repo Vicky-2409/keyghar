@@ -7,7 +7,7 @@ const VALID_SLUGS = new Set(seoPages as string[]);
 
 export function isValidSeoSlug(slug: string): boolean {
   if (VALID_SLUGS.has(slug)) return true;
-  return /^\d-bhk|flats-for-rent|apartments-in|pg-in|villa-in/.test(slug);
+  return /^\d-bhk|flats-for-rent|houses-for-rent|apartments-in|pg-in|villa-in/.test(slug);
 }
 
 export function parseSeoSlug(slug: string): ParsedSeoSlug | null {
@@ -21,7 +21,7 @@ export function parseSeoSlug(slug: string): ParsedSeoSlug | null {
     result.bedrooms = parseInt(parts[bhkIdx - 1], 10);
   }
 
-  if (slug.includes("flats")) result.propertyType = "flat";
+  if (slug.includes("flats") || slug.includes("houses")) result.propertyType = "flat";
   if (slug.includes("apartments")) result.propertyType = "apartment";
   if (slug.includes("pg")) result.propertyType = "pg";
   if (slug.includes("villa")) result.propertyType = "villa";

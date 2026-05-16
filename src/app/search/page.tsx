@@ -2,8 +2,13 @@ import { Suspense } from "react";
 import { SearchResults } from "@/components/search/SearchResults";
 import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
-export const metadata = {
-  title: "Search Rentals",
+import type { Metadata } from "next";
+import { BRAND_NAME, SITE_URL } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: `Search Rentals — Flats, PG & Houses`,
+  description: `Search rental homes across India on ${BRAND_NAME}. Filter by city, BHK, budget, and furnishing.`,
+  alternates: { canonical: `${SITE_URL}/search` },
 };
 
 function SearchFallback() {

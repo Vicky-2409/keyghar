@@ -4,7 +4,7 @@ import { parseSeoSlug, seoSlugToTitle, isValidSeoSlug } from "@/lib/parseSeoSlug
 import { parsedToFilters } from "@/lib/parseQuery";
 import { SearchResults } from "@/components/search/SearchResults";
 import { SkeletonCard } from "@/components/ui/SkeletonCard";
-import { BRAND_NAME } from "@/lib/constants";
+import { BRAND_NAME, SITE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 type Props = { params: Promise<{ seoSlug: string }> };
@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} | ${BRAND_NAME}`,
     description: `Browse ${title.toLowerCase()}. Verified listings with photos, prices, and owner contact.`,
+    alternates: { canonical: `${SITE_URL}/${seoSlug}` },
   };
 }
 

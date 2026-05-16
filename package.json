@@ -11,7 +11,9 @@
     "scrape:images": "node scripts/scrape-sulekha-images.mjs",
     "scrape:browser": "node scripts/scrape-sulekha-browser.mjs",
     "scrape:all": "node scripts/discover-all-cities.mjs && node scripts/scrape-sulekha-browser.mjs",
-    "build:manifest": "node scripts/build-manifest-from-disk.mjs"
+    "build:manifest": "node scripts/build-manifest-from-disk.mjs",
+    "generate:seo": "node scripts/generate-seo-content.mjs",
+    "prebuild": "node scripts/generate-seo-content.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
