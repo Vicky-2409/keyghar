@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
@@ -18,6 +19,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 export const metadata: Metadata = {
   title: {
@@ -29,6 +31,9 @@ export const metadata: Metadata = {
   ...(googleVerification
     ? { verification: { google: googleVerification } }
     : {}),
+  ...(adsenseClient
+    ? { other: { "google-adsense-account": adsenseClient } }
+    : {}),
 };
 
 export default function RootLayout({
@@ -39,6 +44,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={jakarta.variable}>
       <body className="min-h-screen flex flex-col font-sans antialiased pb-16 md:pb-0">
+        {adsenseClient && (
+          <Script
+            id="adsense-init"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        )}
         <ThemeProvider>
           <NuqsProvider>
             <ContactAccessProvider>
@@ -47,7 +61,6 @@ export default function RootLayout({
               <Footer />
               <MobileBottomNav />
               <CookieConsent />
-              <AdSenseScript />
             </ContactAccessProvider>
           </NuqsProvider>
         </ThemeProvider>
